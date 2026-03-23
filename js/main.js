@@ -61,7 +61,7 @@ function displayLanguages(languages) {
         .sort((a, b) => b[1] - a[1]);
 
     if (sortedLanguages.length === 0) {
-        container.innerHTML = '<p style="color: #5a5a64; text-align: center;">No hay lenguajes para mostrar</p>';
+        container.innerHTML = '<p style="color: #5d8cb5; text-align: center;">No hay lenguajes para mostrar</p>';
         return;
     }
 
@@ -75,10 +75,10 @@ function displayLanguages(languages) {
             <div style="margin-bottom: 1rem;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
                     <span style="font-size: 0.85rem; font-weight: 500; color: #1a1a1a;">${language}</span>
-                    <span style="font-size: 0.8rem; color: #d0e4f3;">${count} repo${count !== 1 ? 's' : ''}</span>
+                    <span style="font-size: 0.8rem; color: #5d8cb5;">${count} repo${count !== 1 ? 's' : ''}</span>
                 </div>
                 <div style="height: 4px; background: rgba(0, 0, 0, 0.1); border-radius: 2px; overflow: hidden;">
-                    <div style="height: 100%; width: 0%; background: #d0e4f3; border-radius: 2px; transition: width 0.8s ease;" 
+                    <div style="height: 100%; width: 0%; background: #5d8cb5; border-radius: 2px; transition: width 0.8s ease;" 
                          class="language-bar" data-percentage="${percentage}"></div>
                 </div>
             </div>
@@ -187,3 +187,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAllGitHubData();
     initProjectModals(); 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.cert-group-card');
+    cards.forEach(card => {
+      const list = card.querySelector('.cert-sub-list');
+      if (!list) return;
+      const items = list.querySelectorAll('li');
+      if (items.length === 1) {
+        card.classList.add('single-cert');
+      } else {
+        card.classList.add('multi-cert');
+      }
+    });
+  });
