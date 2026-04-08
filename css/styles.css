@@ -1,5 +1,6 @@
 :root {
-    --side-bg: #8BB6D9;
+    /* CONTRASTE: Usamos el azul oscuro para asegurar legibilidad del texto blanco */
+    --side-bg: #4B7A9D; 
     --accent-color: #5d8cb5;
     --primary-text: #1d1d1f;
     --muted-text: #6e6e73;
@@ -17,40 +18,49 @@ body {
     color: var(--primary-text);
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    /* REDUCIDO padding vertical para ahorrar espacio arriba/abajo */
+    padding: 1rem 2rem; 
+    font-size: 16px; /* Base estándar legible */
 }
 
 .resume-card {
     width: 100%;
-    max-width: 1300px;
+    /* AUMENTADO max-width para extender horizontalmente (Antes 1000px) */
+    max-width: 1450px; 
     background: white;
     display: flex;
-    border-radius: 25px;
+    border-radius: 20px; /* Un poco menos redondeado para optimizar bordes */
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* ========== COLUMNA IZQUIERDA ========== */
 .left-col {
-    width: 300px;
+    /* REDUCIDO ancho para dar más espacio a la columna principal (Antes 320px) */
+    width: 290px; 
     background: var(--side-bg);
     color: white;
-    padding: 1rem;
+    /* REDUCIDO padding para compactar (Antes 2rem) */
+    padding: 1.5rem 1.8rem; 
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    /* REDUCIDO gap entre grupos (Antes 0.8rem) */
+    gap: 0.6rem; 
 }
 
 .profile-icon {
-    width: 120px;
-    height: 120px;
+    /* REDUCIDO tamaño de foto para dar espacio rápido al texto */
+    width: 150px;
+    height: 150px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0.5rem auto 1rem; /* Margen superior/inferior compacto */
     overflow: hidden;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .profile-icon img {
@@ -61,31 +71,39 @@ body {
 }
 
 .edu-item {
-    background: rgba(255, 255, 255, 0.187);
-    border-radius: 0.9rem;
-    padding: 6px 10px;
-    margin-bottom: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 0.7rem;
+    /* REDUCIDO padding interno (Antes 10px 14px) */
+    padding: 8px 12px; 
+    /* REDUCIDO margen inferior (Antes 8px) */
+    margin-bottom: 6px;
 }
 
 .edu-item h4 {
-    font-size: 0.8rem;
+    /* AJUSTADO tamaño no tan grande (Antes 1rem) */
+    font-size: 0.95rem; 
     margin-bottom: 2px;
+    line-height: 1.2;
 }
 
 .edu-item p {
-    font-size: 0.75rem;
+    /* AJUSTADO tamaño (Antes 0.85rem) */
+    font-size: 0.8rem; 
     opacity: 0.9;
 }
 
 .edu-item .date {
     font-weight: 600;
-    font-size: 0.7rem;
-    margin-top: 3px;
+    /* AJUSTADO tamaño (Antes 0.8rem) */
+    font-size: 0.75rem; 
+    margin-top: 2px;
+    color: #e0f0ff; 
 }
 
 .language-circles {
     display: flex;
-    gap: 1rem;
+    /* REDUCIDO gap entre idiomas */
+    gap: 0.8rem; 
     justify-content: center;
 }
 
@@ -94,8 +112,8 @@ body {
 }
 
 .lang-pct {
-    width: 48px;
-    height: 48px;
+    width: 44px; /* Un poco más pequeños */
+    height: 44px;
     border: 2px solid white;
     border-radius: 50%;
     display: flex;
@@ -108,27 +126,28 @@ body {
 .lang-name {
     font-size: 0.45rem;
     text-transform: uppercase;
-    margin-top: 3px;
+    margin-top: 2px;
     display: block;
 }
 
 .side-group {
-    margin-bottom: 0.5rem;
+    /* REDUCIDO margen inferior (Antes 1.5rem) */
+    margin-bottom: 1rem; 
 }
 
 .side-group .side-title {
-    font-size: 0.7rem;
+    font-size: 0.8rem; 
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 2px;
-    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 3px;
+    margin-bottom: 0.6rem;
 }
 
 .side-group h4.side-title {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     border-bottom: none;
-    margin: 0.8rem 0 0.3rem;
+    margin: 1rem 0 0.4rem;
     letter-spacing: 0.5px;
 }
 
@@ -136,368 +155,420 @@ body {
     margin-top: 0;
 }
 
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-}
-
-.tag-cloud span {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 2px 6px;
-    border-radius: 20px;
-    font-size: 0.55rem;
-    font-weight: 400;
-    backdrop-filter: blur(2px);
-    transition: all 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.tag-cloud span:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.tag-cloud.with-icons span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.tag-cloud.with-icons span svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-    opacity: 0.9;
-    flex-shrink: 0;
-}
-
-.tag-cloud.compact span {
-    padding: 2px 6px;
-    font-size: 0.55rem;
-}
-
 .side-group hr {
-    margin: 0.5rem 0;
+    /* REDUCIDO margen (Antes 1rem) */
+    margin: 0.8rem 0; 
     background: rgba(255, 255, 255, 0.1);
     height: 1px;
     border: none;
 }
 
-/* ========== COLUMNA DERECHA ========== */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    /* REDUCIDO gap entre habilidades */
+    gap: 6px; 
+}
+
+.tag-cloud span {
+    background: rgba(255, 255, 255, 0.12);
+    /* REDUCIDO padding interno */
+    padding: 4px 8px; 
+    border-radius: 15px;
+    /* AJUSTADO tamaño no tan grande (Antes 0.75rem) */
+    font-size: 0.7rem; 
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tag-cloud span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.tag-cloud.with-icons span {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Espacio más compacto icono-texto */
+}
+
+.tag-cloud.with-icons span svg {
+    /* REDUCIDO tamaño icono (Antes 18px) */
+    width: 16px; 
+    height: 16px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.tag-cloud.compact span {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+}
+
+/* ========== COLUMNA DERECHA (MAIN) ========== */
 .right-col {
     flex: 1;
-    padding: 1rem;
+    /* REDUCIDO padding vertical, mantenemos horizontal (Antes 2.5rem 3rem) */
+    padding: 1.8rem 2.5rem; 
+    background: white;
+}
+
+.main-header {
+    /* REDUCIDO margen (Antes 1.5rem) */
+    margin-bottom: 1rem; 
 }
 
 .main-header h1 {
-    font-size: 1.6rem;
-    margin-bottom: 0.2rem;
+    /* AJUSTADO tamaño nombre (Antes 2.2rem) */
+    font-size: 2rem; 
+    /* REDUCIDO margen inferior (Antes 0.5rem) */
+    margin-bottom: 0.3rem; 
     letter-spacing: -1px;
+    color: var(--primary-text);
 }
 
 .job-tags {
     display: flex;
     gap: 6px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     flex-wrap: wrap;
 }
 
 .job-tag {
-    border: 1px solid var(--side-bg);
+    border: 1.5px solid var(--side-bg);
     color: var(--side-bg);
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 15px;
-    font-size: 0.65rem;
-    font-weight: 500;
+    /* AJUSTADO tamaño (Antes 0.85rem) */
+    font-size: 0.8rem; 
+    font-weight: 600;
 }
 
 .summary {
-    font-size: 0.7rem;
+    /* AJUSTADO tamaño párrafo (Antes 0.95rem) */
+    font-size: 0.9rem; 
+    /* REDUCIDO interlineado (Antes 1.6) */
+    line-height: 1.5; 
     color: var(--muted-text);
-    margin-bottom: 0.8rem;
+    /* REDUCIDO margen inferior (Antes 2rem) */
+    margin-bottom: 1.2rem; 
     text-align: justify;
 }
 
 .section-title {
-    font-size: 0.7rem;
+    /* AJUSTADO tamaño título sección (Antes 1.1rem) */
+    font-size: 1rem; 
     text-transform: uppercase;
     color: var(--side-bg);
     letter-spacing: 1px;
-    margin-bottom: 0.6rem;
+    /* REDUCIDO margen inferior (Antes 1.2rem) */
+    margin-bottom: 0.8rem; 
+    font-weight: 700;
+    border-bottom: 2px solid #f0f4f8; 
+    padding-bottom: 0.4rem;
 }
 
+/* ========== EXPERIENCIA ========== */
 .exp-card {
-    margin-bottom: 0.8rem;
+    /* REDUCIDO margen entre experiencias (Antes 1.8rem) */
+    margin-bottom: 1.2rem; 
     position: relative;
-    padding-left: 8px;
-    border-left: 2px solid #eee;
+    padding-left: 12px; /* Un poco menos de espacio a la línea */
+    border-left: 3px solid #eef2f6; 
 }
 
 .exp-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    /* REDUCIDO gap header (Antes 0.5rem) */
+    gap: 0.3rem; 
+    margin-bottom: 2px;
 }
 
 .exp-header h4 {
-    font-size: 0.75rem;
+    /* AJUSTADO tamaño puesto (Antes 1.1rem) */
+    font-size: 1rem; 
+    color: var(--primary-text);
 }
 
 .date-badge {
-    font-size: 0.55rem;
+    /* AJUSTADO tamaño fecha (Antes 0.8rem) */
+    font-size: 0.75rem; 
     background: #f0f4f8;
-    padding: 1px 6px;
+    padding: 2px 8px;
     border-radius: 10px;
     color: var(--side-bg);
     font-weight: 600;
 }
 
 .place {
-    font-size: 0.65rem;
-    color: var(--side-bg);
-    font-weight: 500;
-    margin: 0 0 2px;
+    /* AJUSTADO tamaño lugar (Antes 0.9rem) */
+    font-size: 0.85rem; 
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
 }
 
 .exp-list {
     list-style: none;
-    font-size: 0.65rem;
+    /* AJUSTADO tamaño lista (Antes 0.9rem) */
+    font-size: 0.85rem; 
     color: var(--muted-text);
     text-align: justify;
+    /* REDUCIDO interlineado (Antes 1.6) */
+    line-height: 1.5; 
 }
 
 .exp-list li {
-    margin-bottom: 2px;
+    margin-bottom: 4px; /* Un poco menos de espacio entre puntos */
+    position: relative;
+    padding-left: 12px;
 }
 
-/* ========== CERTIFICACIONES ========== */
+.exp-list li::before {
+    content: "•";
+    color: var(--side-bg);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* ========== CERTIFICACIONES (MEJORADO CON GRID) ========== */
 .cert-group-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    /* CAMBIADO A GRID de 2 columnas para no necesitar tanto espacio vertical */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    /* REDUCIDO gap (Antes 1rem) */
+    gap: 0.8rem; 
+    /* REDUCIDO margen inferior (Antes 2rem) */
+    margin-bottom: 1.2rem; 
 }
 
 .cert-group-card {
     background: #ffffff;
-    padding: 0.5rem;
-    border-radius: 14px;
-    border: 1px solid #f1f5f9;
+    /* REDUCIDO padding interno (Antes 1rem) */
+    padding: 0.8rem; 
+    border-radius: 12px; /* Un poco más compacto */
+    border: 1px solid #eef2f6;
     transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+    width: 100%; /* Ocupa el ancho de la celda del grid */
 }
 
-/* Tarjetas con una sola certificación: se agrupan horizontalmente */
+/* Clases específicas para span de columna */
 .cert-group-card.single-cert {
-    width: calc(33.333% - 0.5rem); /* 3 columnas, ajusta según prefieras */
+    /* Por defecto span 1, ocupa una celda */
 }
 
-/* Tarjetas con varias certificaciones: ocupan todo el ancho */
 .cert-group-card.multi-cert {
-    width: 100%;
+    /* Fuerza a ocupar las 2 columnas del grid principal si es necesario */
+    grid-column: span 2; 
+}
+
+.cert-group-card:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+    transform: translateY(-1px);
 }
 
 .cert-group-header {
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 0.2rem;
+    gap: 8px; /* Compacto */
+    margin-bottom: 0.6rem;
 }
 
 .cert-group-header img {
-    width: 28px;
-    height: 28px;
+    /* REDUCIDO tamaño logo certificador (Antes 36px) */
+    width: 30px; 
+    height: 30px;
     object-fit: contain;
-    border-radius: 50%;
+    border-radius: 6px;
     background: #f8fafc;
     padding: 3px;
-    border: 2px solid #e9eff5;
+    border: 1px solid #e2e8f0;
 }
 
 .cert-group-header h4 {
-    font-size: 0.65rem;
-    color: #0f172a;
+    /* AJUSTADO tamaño título cert (Antes 0.95rem) */
+    font-size: 0.9rem; 
+    color: var(--primary-text);
     font-weight: 700;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
+    gap: 2px; /* Compacto */
     margin: 0;
     line-height: 1.2;
 }
 
 .cert-group-header h4 .date-badge {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     background: transparent;
-    color: var(--side-bg);
+    color: var(--muted-text);
     padding: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
+/* Convertimos la lista interna también en un GRID denso de 2 columnas */
 .cert-sub-list.two-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 4px; /* Muy compacto */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .cert-sub-list li {
-    padding: 0.1rem 0.5rem;
-    background: #ffffff;
+    /* REDUCIDO padding interno li */
+    padding: 3px 8px; 
+    background: #f8fafc;
     border: 1px solid #eef2f6;
-    border-radius: 14px;
-    font-size: 0.6rem;
-    color: #1e293b;
-    line-height: 1.2;
-    transition: all 0.15s ease;
-    display: inline-block;
-    margin: 0;
-}
-
-.cert-sub-list li::before {
-    display: none;
+    border-radius: 10px;
+    /* AJUSTADO tamaño sub-cert (Antes 0.8rem) */
+    font-size: 0.75rem; 
+    color: #475569;
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Corta con ... si es muy largo */
 }
 
 .cert-sub-list li:hover {
-    background: #f8fafc;
+    background: #ffffff;
     border-color: var(--side-bg);
+    color: var(--side-bg);
 }
 
 /* ========== GITHUB STATS (COLUMNA DERECHA) ========== */
 .github-stats-right {
     background: #ffffff;
     border: 1px solid #eef2f6;
-    border-radius: 20px;
-    padding: 1rem;
+    border-radius: 15px; /* Más compacto */
+    /* REDUCIDO padding (Antes 1.5rem) */
+    padding: 1.2rem; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .github-stats-right .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    /* REDUCIDO gap (Antes 1rem) */
+    gap: 0.8rem; 
+    /* REDUCIDO margen inferior (Antes 1.5rem) */
+    margin-bottom: 1.2rem; 
 }
 
 .github-stats-right .stat-item {
     background: #f8fafc;
-    border-radius: 16px;
-    padding: 0.5rem;
+    border-radius: 12px;
+    /* REDUCIDO padding (Antes 1rem) */
+    padding: 0.8rem; 
     text-align: center;
     border: 1px solid #eef2f6;
-    transition: all 0.2s ease;
 }
 
 .github-stats-right .stat-item:hover {
     border-color: var(--side-bg);
-    background: #fefefe;
     transform: translateY(-2px);
 }
 
 .github-stats-right .stat-number {
-    font-size: 1.1rem;
-    font-weight: 700;
+    /* AJUSTADO tamaño número grande (Antes 1.8rem) */
+    font-size: 1.6rem; 
+    font-weight: 800;
     color: var(--side-bg);
-    line-height: 1.2;
-    margin-bottom: 0.2rem;
+    line-height: 1;
+    margin-bottom: 0.3rem;
 }
 
 .github-stats-right .stat-label {
-    font-size: 0.6rem;
+    /* AJUSTADO tamaño etiqueta (Antes 0.75rem) */
+    font-size: 0.7rem; 
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--muted-text);
+    font-weight: 600;
 }
 
 .github-stats-right h4 {
-    font-size: 0.7rem;
+    /* AJUSTADO tamaño (Antes 0.9rem) */
+    font-size: 0.85rem; 
     text-transform: uppercase;
-    color: var(--side-bg);
+    color: var(--primary-text);
     letter-spacing: 1px;
-    margin: 0.8rem 0 0.6rem 0;
+    /* REDUCIDO margen (Antes 1.5rem 0 1rem 0) */
+    margin: 1.2rem 0 0.8rem 0; 
     border-bottom: 1px solid #eef2f6;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.4rem;
 }
 
-/* Grid de 4 columnas para los lenguajes */
+/* AUMENTADO A 4 COLUMNAS para aprovechar el ancho horizontal */
 .languages-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(4, 1fr); 
+    /* REDUCIDO gap */
+    gap: 0.8rem; 
 }
 
 .language-item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px; /* Compacto */
     background: #ffffff;
-    padding: 0.3rem;
-    border-radius: 12px;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
     border: 1px solid #eef2f6;
-    transition: all 0.2s ease;
 }
 
 .language-item:hover {
     border-color: var(--side-bg);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .language-info {
     display: flex;
     justify-content: space-between;
-    font-size: 0.6rem;
+    /* AJUSTADO tamaño (Antes 0.8rem) */
+    font-size: 0.75rem; 
     color: var(--primary-text);
-    font-weight: 500;
-}
-
-.language-name {
     font-weight: 600;
-    color: var(--side-bg);
-}
-
-.language-percent {
-    color: var(--muted-text);
 }
 
 .language-bar-bg {
     width: 100%;
-    height: 4px;
+    /* REDUCIDO altura barra (Antes 6px) */
+    height: 5px; 
     background: #eef2f6;
     border-radius: 10px;
-    overflow: hidden;
 }
 
-.language-bar-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: var(--side-bg);
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 850px) {
+/* ========== RESPONSIVE (AJUSTADO PARA EL NUEVO DISEÑO) ========== */
+@media (max-width: 950px) {
     .resume-card {
         flex-direction: column;
     }
 
     .left-col {
         width: 100%;
+        padding: 1.5rem;
+    }
+
+    .right-col {
+        padding: 1.5rem 2rem;
     }
 
     .cert-group-container {
-        flex-direction: column;
+        /* Volvemos a una columna en tablets/móviles */
+        grid-template-columns: 1fr; 
     }
-
-    .cert-group-card.single-cert,
+    
     .cert-group-card.multi-cert {
-        width: 100%;
-    }
-
-    .cert-sub-list.two-columns {
-        grid-template-columns: 1fr;
+        grid-column: span 1; 
     }
 
     .languages-grid {
@@ -505,8 +576,152 @@ body {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+    
+    .resume-card {
+        border-radius: 0;
+    }
+    
+    .right-col {
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .github-stats-right .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .languages-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .main-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* 1. PANTALLAS MUY GRANDES (Monitores 4K, Ultrawide - mayores a 1600px) */
+@media (min-width: 1600px) {
+    body {
+        font-size: 18px; /* Aumentamos el tamaño base para que no se vea minúsculo */
+        padding: 3rem 5rem;
+    }
+    .resume-card {
+        max-width: 1600px; /* Expandimos el límite de ancho */
+    }
+    .left-col {
+        width: 320px; /* Columna izquierda un poco más ancha */
+    }
+    .languages-grid {
+        grid-template-columns: repeat(5, 1fr); /* Aprovechamos para 5 columnas de lenguajes */
+    }
+}
+
+/* 2. PANTALLAS GRANDES (Laptops pequeñas y pantallas estándar - menores a 1200px) */
+@media (max-width: 1200px) {
+    .resume-card {
+        max-width: 98%; /* La tarjeta toma casi todo el ancho disponible */
+    }
+    .languages-grid {
+        grid-template-columns: repeat(3, 1fr); /* Bajamos de 4 a 3 columnas de lenguajes */
+    }
+}
+
+/* 3. PANTALLAS MEDIANAS (Tablets en vertical - menores a 950px) */
+@media (max-width: 950px) {
+    .resume-card {
+        flex-direction: column; /* Apilamos: columna izquierda arriba, derecha abajo */
+    }
+
+    .left-col {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    /* Reorganizamos la foto y textos de la columna izquierda para que fluyan mejor en horizontal */
+    .profile-icon {
+        width: 130px;
+        height: 130px;
+    }
+
+    .right-col {
+        padding: 2rem;
+    }
+
+    .cert-group-container {
+        /* Las certificaciones pasan de 2 a 1 columna */
+        grid-template-columns: 1fr; 
+    }
+    
+    .cert-group-card.multi-cert {
+        grid-column: span 1; 
+    }
+
+    .languages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 4. PANTALLAS CHICAS (Smartphones estándar - menores a 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 0; /* Quitamos márgenes exteriores para aprovechar 100% de la pantalla */
+        font-size: 15px; /* Reducimos ligeramente el texto general */
+    }
+    
+    .resume-card {
+        border-radius: 0; /* Quitamos bordes redondeados en móvil, se ve más nativo */
+        box-shadow: none;
+    }
+    
+    .left-col {
+        padding: 1.5rem;
+    }
+
+    .right-col {
+        padding: 1.5rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.8rem; /* El nombre un poco más chico para que no rompa la línea */
+    }
+
+    .github-stats-right .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* Stats en 2 columnas */
+    }
+    
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr); /* Lenguajes en 2 columnas */
+    }
+
+    /* La lista de experiencia pierde el margen extra a la izquierda */
+    .exp-list {
+        padding-left: 0;
+    }
+}
+
+/* 5. PANTALLAS MUY CHICAS (Smartphones pequeños / iPhones viejos - menores a 400px) */
+@media (max-width: 400px) {
+    .profile-icon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .main-header h1 {
+        font-size: 1.5rem; 
+    }
+
+    .github-stats-right .stats-grid,
+    .languages-grid,
+    .cert-sub-list.two-columns {
+        grid-template-columns: 1fr; /* Colapsamos absolutamente TODO a 1 sola columna vertical */
+    }
+
+    .exp-header {
+        flex-direction: column; /* El puesto y la fecha van uno arriba del otro */
+        align-items: flex-start;
+        gap: 5px;
     }
 }
